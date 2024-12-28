@@ -107,26 +107,26 @@ trait InstallsInertiaStacks
         @unlink(resource_path('views/welcome.blade.php'));
 
         // Components + Pages...
-        (new Filesystem)->ensureDirectoryExists(resource_path('js/Components'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('js/Layouts'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('js/Pages'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('js/components'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('js/layouts'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('js/pages'));
 
         if ($this->option('typescript')) {
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/Components', resource_path('js/Components'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/Layouts', resource_path('js/Layouts'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/Pages', resource_path('js/Pages'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/components', resource_path('js/components'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/layouts', resource_path('js/layouts'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/pages', resource_path('js/pages'));
             (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue-ts/resources/js/types', resource_path('js/types'));
         } else {
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue/resources/js/Components', resource_path('js/Components'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue/resources/js/Layouts', resource_path('js/Layouts'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue/resources/js/Pages', resource_path('js/Pages'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue/resources/js/components', resource_path('js/components'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue/resources/js/layouts', resource_path('js/layouts'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-vue/resources/js/pages', resource_path('js/pages'));
         }
 
         if (! $this->option('dark')) {
             $this->removeDarkClasses((new Finder)
                 ->in(resource_path('js'))
                 ->name('*.vue')
-                ->notName('Welcome.vue')
+                ->notName('welcome.vue')
             );
         }
 
@@ -324,26 +324,26 @@ trait InstallsInertiaStacks
         @unlink(resource_path('views/welcome.blade.php'));
 
         // Components + Pages...
-        (new Filesystem)->ensureDirectoryExists(resource_path('js/Components'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('js/Layouts'));
-        (new Filesystem)->ensureDirectoryExists(resource_path('js/Pages'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('js/components'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('js/layouts'));
+        (new Filesystem)->ensureDirectoryExists(resource_path('js/pages'));
 
         if ($this->option('typescript')) {
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/Components', resource_path('js/Components'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/Layouts', resource_path('js/Layouts'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/Pages', resource_path('js/Pages'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/components', resource_path('js/components'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/layouts', resource_path('js/layouts'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/pages', resource_path('js/pages'));
             (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react-ts/resources/js/types', resource_path('js/types'));
         } else {
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react/resources/js/Components', resource_path('js/Components'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react/resources/js/Layouts', resource_path('js/Layouts'));
-            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react/resources/js/Pages', resource_path('js/Pages'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react/resources/js/components', resource_path('js/components'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react/resources/js/layouts', resource_path('js/layouts'));
+            (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-react/resources/js/pages', resource_path('js/pages'));
         }
 
         if (! $this->option('dark')) {
             $this->removeDarkClasses((new Finder)
                 ->in(resource_path('js'))
                 ->name(['*.jsx', '*.tsx'])
-                ->notName(['Welcome.jsx', 'Welcome.tsx'])
+                ->notName(['welcome.jsx', 'welcome.tsx'])
             );
         }
 
