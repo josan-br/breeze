@@ -33,8 +33,8 @@ class InstallCommand extends Command implements PromptsForMissingInput
                             {--dark : Indicate that dark mode support should be installed}
                             {--pest : Indicate that Pest should be installed}
                             {--ssr : Indicates if Inertia SSR support should be installed}
-                            {--typescript : Indicates if TypeScript is preferred for the Inertia stack}
-                            {--eslint : Indicates if ESLint with Prettier should be installed}
+                            // {--typescript : Indicates if TypeScript is preferred for the Inertia stack}
+                            // {--eslint : Indicates if ESLint with Prettier should be installed}
                             {--composer=global : Absolute path to the Composer binary which should be used to install packages}';
 
     /**
@@ -403,8 +403,8 @@ class InstallCommand extends Command implements PromptsForMissingInput
                 options: [
                     'dark' => 'Dark mode',
                     'ssr' => 'Inertia SSR',
-                    'typescript' => 'TypeScript',
-                    'eslint' => 'ESLint with Prettier',
+                    // 'typescript' => 'TypeScript',
+                    // 'eslint' => 'ESLint with Prettier',
                 ],
                 hint: 'Use the space bar to select options.'
             ))->each(fn ($option) => $input->setOption($option, true));
